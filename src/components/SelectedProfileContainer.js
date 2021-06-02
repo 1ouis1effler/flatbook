@@ -17,7 +17,7 @@ export default class SelectedProfileContainer extends Component {
                 <img src={this.props.selectedProfile.avatar_url} alt="profileImage"/>
                 <p>{this.props.selectedProfile.login} is my nickname</p>
                 <div>
-                    <form className="comment-form">
+                    <form className="comment-form" >
                         <ul>
                             {this.renderMyComments()}
                         </ul>
@@ -27,7 +27,7 @@ export default class SelectedProfileContainer extends Component {
                             name="comment"
                             placeholder="Add a comment..."
                         />
-                        <button className="comment-button" >Submit</button>
+                        <button className="comment-button" onClick={(event) => event.preventDefault() } >Submit</button>
                     </form>
                 </div>
             </div>
