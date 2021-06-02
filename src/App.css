@@ -1,12 +1,10 @@
 .App {
   text-align: center;
 }
-
 .profile-image{
   height: 150px;
   width: 150px;
 }
-
 .all-profile-container{
   display: flex;
   flex-wrap: wrap;
@@ -14,4 +12,26 @@
 
 .profile-container{
   padding: 10px;
+}
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom: 1px solid white;
+}
+.navbar h1 {
+  color:blue;
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  margin-left: 16 px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color:tomato;
 }
