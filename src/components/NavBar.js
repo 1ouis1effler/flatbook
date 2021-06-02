@@ -1,4 +1,5 @@
 const Navbar = () => {
+  console.log("cliked")
   return (  
     <nav className ="navbar">
       <h1>FLATBÖK!</h1>

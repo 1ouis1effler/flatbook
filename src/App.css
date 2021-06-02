@@ -4,6 +4,9 @@
 .profile-image{
   height: 150px;
   width: 150px;
+  border-radius: 6%;
+  box-shadow: 10px 10px cornflowerblue ;
+  border-style: groove;
 }
 .all-profile-container{
   display: flex;
@@ -35,3 +38,28 @@
 .navbar a:hover {
   color:tomato;
 }
+
+.selected-profile-container {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+
+}
+
+.selected-profile-image {
+  height: 150px;
+  width: 150px;
+  border-radius: 6%;
+  box-shadow: 10px 10px cornflowerblue ;
+  border-style: groove;
+}
+
+.selected-profile-name {
+  font-size: 45px;
+  align-items: center;
+}
+/* <div className="selected-profile-container">
+<h1 className="selected-profile-name">{this.props.selectedProfile.name}</h1>
+<img className="selected-profile-image" src={this.props.selectedProfile.avatar_url} alt="profileImage"/>
+<p>{this.props.selectedProfile.login} is my nickname</p>
+<div className="selected-profile-comments"> */
