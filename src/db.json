@@ -612,7 +612,22 @@
             "created_at": "2019-10-21T19:28:23Z",
             "updated_at": "2021-05-27T21:45:09Z"
         }
-
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "profileId": 32102536,
+            "content": "you amazin'"
+        },
+        {
+            "id": 2,
+            "profileId": 32102536,
+            "content": "fo sho"
+        },
+        {
+            "id": 1,
+            "profileId": 77186128,
+            "content": "Keiths first comment. woooooow"
+        }
     ]
- 
 }
