@@ -83,8 +83,6 @@ class App extends Component {
   //function that changes state
   toggleSelectedProfile = (profile) => {
     //set state of selectedProfile
-
-
     return this.setState({ 
       showChosenProfile: !this.state.showChosenProfile,
       selectedProfile: profile
