@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import './App.css'
 import AllProfilesContainer from './components/AllProfilesContainer'
 import SelectedProfileContainer from './components/SelectedProfileContainer'
+import NavBar from './components/NavBar'
+
 
 class App extends Component {
 
@@ -93,8 +95,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        
-        Flatbook
+        <NavBar />
         {this.state.showChosenProfile ? 
           <SelectedProfileContainer 
             toggleSelectedProfile={this.toggleSelectedProfile}
