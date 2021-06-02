@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 export default class SelectedProfileContainer extends Component {
 
-
     render() {
         return (
             <div>
@@ -13,4 +12,5 @@ export default class SelectedProfileContainer extends Component {
             </div>
         )
     }
+    
 }
