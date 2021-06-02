@@ -11,7 +11,7 @@ export default class AllProfiles extends Component {
 
     renderProfiles = () => {
         return this.props.profiles.map(profile => {
-            return <Profile key ={profile.id} profile={profile}/>
+            return <Profile key={profile.id} profile={profile} toggleSelectedProfile={this.props.toggleSelectedProfile}/>
         })
     }
 

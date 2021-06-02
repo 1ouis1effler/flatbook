@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import './App.css'
 import AllProfilesContainer from './components/AllProfilesContainer'
+import SelectedProfileContainer from './components/SelectedProfileContainer'
 
 class App extends Component {
 
   state = {
-    profiles: [{
+    profiles: [
+      {
       "login": "1ouis1effler",
       "id": 32102536,
       "node_id": "MDQ6VXNlcjMyMTAyNTM2",
@@ -72,14 +74,39 @@ class App extends Component {
         "following": 0,
         "created_at": "2021-01-09T06:14:48Z",
         "updated_at": "2021-05-28T15:51:47Z"
-      }],
+      }
+    ],
+    showChosenProfile: false,
+    selectedProfile: {} 
   }
 
+  //function that changes state
+  toggleSelectedProfile = (profile) => {
+    //set state of selectedProfile
+    return this.setState({ 
+      showChosenProfile: !this.state.showChosenProfile,
+      selectedProfile: profile
+    })
+  }
+
+ 
   render() {
     return (
       <div>
+        
         Flatbook
-        <AllProfilesContainer profiles={this.state.profiles}/>
+        {this.state.showChosenProfile ? 
+          <SelectedProfileContainer 
+            toggleSelectedProfile={this.toggleSelectedProfile}
+            selectedProfile={this.state.selectedProfile}
+          /> 
+          : 
+          <AllProfilesContainer 
+            profiles={this.state.profiles} 
+            toggleSelectedProfile={this.toggleSelectedProfile}
+          />
+        }
+        
       </div>
     )
   }
