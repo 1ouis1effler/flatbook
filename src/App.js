@@ -37,7 +37,6 @@ class App extends Component {
         {this.state.showChosenProfile ? 
           <SelectedProfileContainer 
             selectedProfile={this.state.selectedProfile}
-            comments={this.state.comments}
           /> 
           : 
           <AllProfilesContainer 
