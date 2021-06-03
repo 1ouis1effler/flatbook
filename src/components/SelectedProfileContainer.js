@@ -3,35 +3,90 @@ import CommentSection from './CommentSection'
 
 export default class SelectedProfileContainer extends Component {
 
+    state = {
+        comments: []
+    }
+
+
+    componentDidMount(){
+        fetch('http://localhost:3000/comments')
+          .then(response => response.json())
+          .then(comments => this.setState({comments}))
+    }
+
+    addCommentToState = (comment) => {
+        this.setState({
+          comments: this.state.comments.concat([comment])
+        })
+
+
+    }
+
 
     renderMyComments = () => {
-        return this.props.comments.map(commentsObject => {
-            return ( commentsObject.profileId === this.props.selectedProfile.id ? <CommentSection commentInfo={commentsObject}/> : "" )
+        return this.state.comments.map(commentsObject => {
+            return ( 
+                commentsObject.profileId === this.props.selectedProfile.id 
+                ? 
+                <CommentSection commentInfo={commentsObject} /> 
+                : 
+                ""
+            )
         })
+    }
+
+    handleOnSubmit = (event) => {
+        event.preventDefault()
+        const myFormData = new FormData(event.target)
+        const commentContent =  myFormData.get("comment")
+        event.target.reset()
+        console.log(commentContent)  
+
+        //set state to optimist render
+        const commentToAddObject = {
+            id: this.state.comments.length + 1,
+            profileId: this.props.selectedProfile.id,
+            content: commentContent
+        }
+        
+        //hopefully presist the frontend
+
+        this.addCommentToState(commentToAddObject)
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',     
+            },
+            body: JSON.stringify(commentToAddObject)
+        }
+
+        //fetch backend to add comment
+        fetch('http://localhost:3000/comments/', options)
     }
 
     render() {
         return (
-            <div className="selected-profile-container">
-
+            <div>
+                <h1>{this.props.selectedProfile.name}</h1>
+                <img src={this.props.selectedProfile.avatar_url} alt="profileImage"/>
+                <p>{this.props.selectedProfile.login} is my nickname</p>
+                <p>I have {this.props.selectedProfile.followers} followers</p>
                 <div>
-                    <h1 className="selected-profile-name">{this.props.selectedProfile.name}</h1>
-                    <img className="selected-profile-image" src={this.props.selectedProfile.avatar_url} alt="profileImage"/>
-                    <p>{this.props.selectedProfile.login} is my nickname</p>
-                </div>
-
-                <div className="selected-profile-comments">
+                    <form className="comment-form" onSubmit={this.handleOnSubmit}>
                         <ul>
                             {this.renderMyComments()}
                         </ul>
-                    <form className="comment-form" >
                         <input
                             className="comment-input" 
                             type="text"
                             name="comment"
                             placeholder="Add a comment..."
                         />
+<<<<<<< HEAD
                         <button className="comment-button" onClick={(event) => event.preventDefault() } >Submit</button>
+=======
+                        <button className="comment-button"> Submit </button>
+>>>>>>> 502f77c5aa24666e40c8fc4a3ac4a956a05c6441
                     </form>
                 </div>
             </div>

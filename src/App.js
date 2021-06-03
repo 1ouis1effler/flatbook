@@ -10,7 +10,6 @@ class App extends Component {
     profiles: [],
     showChosenProfile: false,
     selectedProfile: {},
-    comments: [] 
   }
 
   //fetch the backend
@@ -18,10 +17,6 @@ class App extends Component {
     fetch('http://localhost:3000/profiles')
       .then(response => response.json())
       .then(profiles => this.setState({profiles}))
-
-    fetch('http://localhost:3000/comments')
-      .then(response => response.json())
-      .then(comments => this.setState({comments}))
   }
    
   //function that affects state of showChosenProfile and selectedProfile
