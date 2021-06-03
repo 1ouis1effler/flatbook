@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import AllProfilesContainer from './components/AllProfilesContainer'
 import SelectedProfileContainer from './components/SelectedProfileContainer'
-import NavBar from './components/NavBar'
+import NavBar from './components/navigation/NavBar'
 
 class App extends Component {
   //initial state before fetch

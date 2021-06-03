@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Profile from './Profile'
 
-export default class AllProfiles extends Component {
+export default class AllProfilesContainer extends Component {
 
     //this container holds an abbreviated view 
     //for each profile in our database
