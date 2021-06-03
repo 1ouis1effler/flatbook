@@ -82,11 +82,7 @@ export default class SelectedProfileContainer extends Component {
                             name="comment"
                             placeholder="Add a comment..."
                         />
-<<<<<<< HEAD
-                        <button className="comment-button" onClick={(event) => event.preventDefault() } >Submit</button>
-=======
                         <button className="comment-button"> Submit </button>
->>>>>>> 502f77c5aa24666e40c8fc4a3ac4a956a05c6441
                     </form>
                 </div>
             </div>
