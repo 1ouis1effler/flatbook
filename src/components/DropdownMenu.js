@@ -7,12 +7,11 @@ import { ReactComponent as BoltIcon } from '../icons/bolt.svg';
 import { ReactComponent as PlusIcon } from '../icons/plus.svg';
 
 export default function DropdownMenu() {
+    //state hook that allows us to toggle the state of the activemenu
+    const [activeMenu, setActiveMenu] = useState('main'); 
 
-    const [activeMenu, setActiveMenu] = useState('main'); //settings, animals
-    
-
-  
-
+    //nested functional component that populates the svg icons, and has 
+    //links to a linkRoute given by parent. sets active menu if goToMenu prop exists
     function DropdownItem(props){
         return (
             <a href={props.linkRoute} className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
@@ -28,29 +27,28 @@ export default function DropdownMenu() {
     return (
         <div className="dropdown">
             <CSSTransition 
-                in={activeMenu === 'main'} 
+                in={ activeMenu === 'main' } 
                 unmountOnExit 
-                timeout={500}
+                timeout={ 500 }
                 classNames="menu-primary"
                 >
                     <div className="menu">
 
                         <DropdownItem 
-                        leftIcon={<ArrowIcon />}
-                            linkRoute={"/"}
+                            leftIcon={ <ArrowIcon /> }
+                            linkRoute={ "/" }
                             >
                             FLATBÖK
                         </DropdownItem>
                         <DropdownItem 
-                            leftIcon={<CogIcon />}
-                            rightIcon={<ChevronIcon />}
+                            leftIcon={ <CogIcon /> }
+                            rightIcon={ <ChevronIcon /> }
                             goToMenu='settings'
                             >
                             More
                         </DropdownItem>
 
-                    </div>
-            
+                    </div>           
             </CSSTransition>
 
             <CSSTransition 
@@ -62,32 +60,32 @@ export default function DropdownMenu() {
                     <div className="menu">
 
                         <DropdownItem 
-                            leftIcon={<ArrowIcon/>}
+                            leftIcon={ <ArrowIcon/> }
                             goToMenu='main'
                             > Go Back</DropdownItem>
                         <DropdownItem 
-                            leftIcon={<BoltIcon/>}
+                            leftIcon={ <BoltIcon/> }
                             linkRoute="https://github.com/1ouis1effler/flatbook"                        
                             > Project Repo 
                         </DropdownItem>
 
                         <DropdownItem 
-                            leftIcon={<PlusIcon/>}
+                            leftIcon={ <PlusIcon/> }
                             linkRoute="https://github.com/1ouis1effler"
                             > Louis Github 
                         </DropdownItem>
                         <DropdownItem 
-                            leftIcon={<PlusIcon/>}
+                            leftIcon={ <PlusIcon/> }
                             linkRoute="https://www.linkedin.com/in/louisleffler/"
                             > Louis Linkedin 
                         </DropdownItem>
                         <DropdownItem 
-                            leftIcon={<PlusIcon/>}
+                            leftIcon={ <PlusIcon/> }
                             linkRoute="https://github.com/Sunset05"
                             > Keith Github 
                         </DropdownItem>
                         <DropdownItem 
-                            leftIcon={<PlusIcon/>}
+                            leftIcon={ <PlusIcon/> }
                             linkRoute="https://www.linkedin.com/in/keith-funk-7082a315b/"
                             > Keith Linkedin 
                             </DropdownItem>

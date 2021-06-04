@@ -289,6 +289,7 @@ a {
 }
 
 .profile-info-container {
+  margin: 20px;
   flex-direction: column;
   display: flex;
   border: groove;
@@ -296,20 +297,24 @@ a {
   padding: 10px;
   justify-content:flex-end;
   background-image: linear-gradient(to right,aliceblue, powderblue,lightcyan,lightcyan, powderblue, cornflowerblue);
+  align-items: center;
 }
 
 .comment-container{
+  width: 90%;
+  height: 45%;
   flex-direction: column;
   display: flex;
   border: groove;
   border-radius: 9%;
-  padding: 10px;
+  padding: 1rem;
   justify-content:flex-end;
   background-image: linear-gradient(to right,aliceblue, powderblue,lightcyan,lightcyan);
 }
 
 .each-comment {
-  justify-content: space-around;
+  justify-content: flex-start;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
