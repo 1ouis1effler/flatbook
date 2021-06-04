@@ -264,13 +264,14 @@ a {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-radius: 10%;
+  border-radius: 20%;
   box-shadow: 10px 10px aliceblue;
   border-style: groove;
 } 
 
 .select-image {
-  max-width: 29%;
+  max-width: 70%;
+  max-height: 70%;
   padding: 15%;
   filter: drop-shadow(8px 8px 10px cornflowerblue);
   border-radius: 50%;
@@ -285,4 +286,30 @@ a {
 
 .all-profile-container{
   padding-left: 2.7%;
+}
+
+.profile-info-container {
+  flex-direction: column;
+  display: flex;
+  border: groove;
+  border-radius: 9%;
+  padding: 10px;
+  justify-content:flex-end;
+  background-image: linear-gradient(to right,aliceblue, powderblue,lightcyan,lightcyan, powderblue, cornflowerblue);
+}
+
+.comment-container{
+  flex-direction: column;
+  display: flex;
+  border: groove;
+  border-radius: 9%;
+  padding: 10px;
+  justify-content:flex-end;
+  background-image: linear-gradient(to right,aliceblue, powderblue,lightcyan,lightcyan);
+}
+
+.each-comment {
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
 }

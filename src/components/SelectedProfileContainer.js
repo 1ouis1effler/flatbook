@@ -69,13 +69,15 @@ export default class SelectedProfileContainer extends Component {
     render() {
         return (
             <div className="whole-container">
-                <h1>{this.props.selectedProfile.name}</h1>
-                <img className="select-image" src={this.props.selectedProfile.avatar_url} alt="profileImage"/>
-                <p>{this.props.selectedProfile.login} is my nickname</p>
-                <p>I have {this.props.selectedProfile.followers} followers</p>
-                <div>
+                <div className="profile-info-container">
+                    <h1>{this.props.selectedProfile.name}</h1>
+                    <img className="select-image" src={this.props.selectedProfile.avatar_url} alt="profileImage"/>
+                    <p>{this.props.selectedProfile.login} is my nickname</p>
+                    <p>I have {this.props.selectedProfile.followers} followers</p>
+                </div>
+                <div className="comment-container">
                     <form className="comment-form" onSubmit={this.handleOnSubmit}>
-                        <ul>
+                        <ul className="each-comment">
                             {this.renderMyComments()}
                         </ul>
                         <input
