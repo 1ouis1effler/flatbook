@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CommentSection from './CommentSection'
+import ProfileInfoContainer from './ProfileInfoContainer'
 
 export default class SelectedProfileContainer extends Component {
 
@@ -69,16 +70,12 @@ export default class SelectedProfileContainer extends Component {
     render() {
         return (
             <div className="whole-container">
-                <div className="profile-info-container">
-                    <h1>{this.props.selectedProfile.name}</h1>
-                    <img className="select-image" src={this.props.selectedProfile.avatar_url} alt="profileImage"/>
-                    <p>{this.props.selectedProfile.login} is my nickname</p>
-                    <p>I have {this.props.selectedProfile.followers} followers</p>
-                </div>
+                <ProfileInfoContainer selectedProfile={this.props.selectedProfile}/>
+
                 <div className="comment-container">
-                    <form className="comment-form" onSubmit={this.handleOnSubmit}>
+                    <form className="comment-form" onSubmit={ this.handleOnSubmit }>
                         <ul className="each-comment">
-                            {this.renderMyComments()}
+                            { this.renderMyComments() }
                         </ul>
                         <input
                             className="comment-input" 
@@ -89,6 +86,7 @@ export default class SelectedProfileContainer extends Component {
                         <button className="comment-button"> Submit </button>
                     </form>
                 </div>
+                
             </div>
         )
     }
