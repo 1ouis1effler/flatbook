@@ -15,6 +15,8 @@ import { ReactComponent as ArrowIcon } from './icons/arrow.svg';
 import { ReactComponent as BoltIcon } from './icons/bolt.svg';
 import DropdownMenu from './components/DropdownMenu'
 
+
+
 class App extends Component {
   //initial state before fetch
   state = {
