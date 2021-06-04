@@ -1,12 +1,33 @@
 .App {
   text-align: center;
 }
+/* this is how the background works */
+body {
+  background-image: linear-gradient(to right,aliceblue, powderblue,lightcyan,lightcyan, powderblue, cornflowerblue);
+}
 .profile-image{
   height: 150px;
   width: 150px;
   border-radius: 6%;
   box-shadow: 10px 10px cornflowerblue ;
   border-style: groove;
+  filter: drop-shadow(8px 8px 10px aliceblue)
+}
+
+/* this makes the profile image flip */
+.profile-image:hover{
+  transform: scaleX(-1);
+}
+
+.profile-name{
+  text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC, 1px 3px 18px #00D2FC;
+  color: #444444;
+  /* background: #FFFFFF; */
+  font-size: 1.01rem;
+  }
+
+.profile-name:hover{
+  color: cornflowerblue;
 }
 .all-profile-container{
   display: flex;
@@ -30,7 +51,7 @@
   border-style: groove;
 }
 .selected-profile-name {
-  font-size: 45px;
+  font-size: 1rem;
   align-items: center;
 }
 
@@ -161,4 +182,99 @@ a {
 .menu-secondary-exit-active {
   transform: translateX(110%);
   transition: all var(--speed) ease;
+}
+
+
+/* footer style*/
+
+.footer-basic {
+  padding:40px 0;
+  background-color: transparent;
+  color:#4b4c4d;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+
+
+/* selected container styling */
+
+
+.whole-container {
+  padding: 90px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10%;
+  box-shadow: 10px 10px aliceblue;
+  border-style: groove;
+} 
+
+.select-image {
+  max-width: 29%;
+  padding: 15%;
+  filter: drop-shadow(8px 8px 10px cornflowerblue);
+  border-radius: 50%;
+  }
+  /* box-shadow: 10px 10px cornflowerblue ;} */
+
+/* this makes selected image card flip */
+.select-image:hover{
+  transform: scaleX(-1);
+}
+
+
+.all-profile-container{
+  padding-left: 2.7%;
 }
