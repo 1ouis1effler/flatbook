@@ -36,6 +36,7 @@ export default class SelectedProfileContainer extends Component {
     }
 
     handleOnSubmit = (event) => {
+
         event.preventDefault()
         const myFormData = new FormData(event.target)
         const commentContent =  myFormData.get("comment")
@@ -52,6 +53,7 @@ export default class SelectedProfileContainer extends Component {
         //hopefully presist the frontend
 
         this.addCommentToState(commentToAddObject)
+
         const options = {
             method: 'POST',
             headers: {
