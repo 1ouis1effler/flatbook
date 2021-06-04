@@ -8,11 +8,12 @@ import NavItem from './components/NavItem'
 import { ReactComponent as BellIcon } from './icons/bell.svg';
 import { ReactComponent as MessengerIcon } from './icons/messenger.svg';
 import { ReactComponent as CaretIcon } from './icons/caret.svg';
-import { ReactComponent as PlusIcon } from './icons/plus.svg';
-import { ReactComponent as CogIcon } from './icons/cog.svg';
-import { ReactComponent as ChevronIcon } from './icons/chevron.svg';
-import { ReactComponent as ArrowIcon } from './icons/arrow.svg';
-import { ReactComponent as BoltIcon } from './icons/bolt.svg';
+
+
+
+
+
+
 import DropdownMenu from './components/DropdownMenu'
 
 
@@ -47,17 +48,15 @@ class App extends Component {
     return (
       <div>
 
-        <Navbar>
-            <NavItem icon={<PlusIcon />} />
+        <Navbar> 
+            <h1>FLATBÖK</h1>
             <NavItem icon={<BellIcon />} />
             <NavItem icon={<MessengerIcon />} />
-
             <NavItem icon={<CaretIcon />}>
               
               <DropdownMenu />
 
             </NavItem>
-
         </Navbar>
 
         {this.state.showChosenProfile ? 
@@ -70,19 +69,7 @@ class App extends Component {
             toggleSelectedProfile={this.toggleSelectedProfile}
           />
         }
-        <body>
-          <div class="footer-basic">
-              <footer>
-                  <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
-                  <ul class="list-inline">
-                      <li class="list-inline-item"><a href="#">Home</a></li>
-                      <li class="list-inline-item"><a href="#">About</a></li>
-                      <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-                  </ul>
-                  <p class="copyright">Flatbook © 2021</p>
-              </footer>
-          </div>
-      </body>
+      
       </div>
     )
   }

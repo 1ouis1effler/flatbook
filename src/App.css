@@ -83,6 +83,13 @@ a {
   border-bottom: var(--border);
 }
 
+.navbar-nav h1 {
+  width: 100%; 
+  text-align: center;
+  transform: translateY(-30%);
+  color: cornflowerblue;
+}
+
 .navbar-nav {
   max-width: 100%;
   height: 100%;
